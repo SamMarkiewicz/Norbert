@@ -1,0 +1,231 @@
+body {
+  font-size: .875em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+strong {
+  font-weight: 700px;
+}
+
+.m-box-fullscreen {
+  width: 100%;
+}
+  .m-box-fullscreen div {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1
+  }
+  .m-box-fullscreen article {
+    position: absolute;
+    top: 350px;
+    width: 450px;
+    left: 45%
+  }
+
+header {
+  background: #D22142;
+  color: #F0F0E1;
+  height: 250px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  text-align: center
+}
+  header p {
+    font-size: 1.1em
+  }
+
+h1, h2 {
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 1em 0 0
+}
+
+h2 {
+  font-size: 3em;
+  padding: 0 0 .25em
+}
+
+h2 + p {
+  font-size: 1.3em;
+  line-height: 2em
+}
+
+
+#empty-one {
+  width: 100%;
+  height: 250px;
+}
+
+#m-box-intro {
+  background: #D97988;
+  color: #F0F0DF;
+  position: relative
+}
+  #m-box-intro div {
+    background: transparent url(../images/bg-1.gif) bottom center no-repeat fixed;
+    min-height: 1300px;
+    height: 100%
+  }
+  #m-box-intro p {
+
+  }
+
+#m-box-instructions {
+  background: #000040;
+
+}
+  #m-box-instructions div {
+    background: transparent url(../images/bg-2.gif) bottom center no-repeat fixed;
+    min-height: 1300px;
+    height: 100%;
+    color: #5F99DE;
+  }
+
+#m-box-instructions-1 {
+  background: #FF9326;
+
+}
+  #m-box-instructions-1 div {
+    background: transparent url(../images/bg-2a.gif) bottom center no-repeat fixed;
+    min-height: 1300px;
+    color: #8C0000;
+    height: 100%
+  }
+
+#m-box-instructions-2 {
+  background: #49748C;
+
+}
+  #m-box-instructions-2 div {
+    background: transparent url(../images/bg-2b.gif) bottom center no-repeat fixed;
+    min-height: 1300px;
+    color: #B3C5DE;
+    height: 100%
+  }
+
+#m-box-instructions-3 {
+  background: #192931;
+
+}
+  #m-box-instructions-3 div {
+    background: transparent url(../images/bg-2c.gif) bottom center no-repeat fixed;
+    min-height: 1300px;
+    color: #B3C5DE;
+    height: 100%
+  }
+
+#m-box-demo {
+  background: #F7D444;
+
+}
+  #m-box-demo div {
+    background: transparent url(../images/bg-3.gif) bottom center no-repeat fixed;
+    min-height: 1300px;
+    height: 100%
+  }
+
+nav ul{
+  list-style: none;
+  position: fixed;
+  top: 40%;
+  right: 30px;
+  z-index: 20
+}
+  nav li{
+    margin: 0 0 15px 0;
+  }
+  nav a {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-indent: -999em;
+    display: block;
+    background: white;
+  }
+    nav a:hover {
+      background: #ccc;
+    }
+
+/* DEMO */
+
+#m-box-demo {
+  /*padding: 0 0 2em;*/
+}
+  #m-box-demo div {
+    min-height: 800px;
+  }
+  #m-box-demo label {
+    display: block;
+    position: relative;
+    margin: 1em auto 0;
+    width: 230px;
+}
+  #m-box-demo label > span {
+    display: none; /* Allow you to keep label info for accessibilty purpose, and remove it visually */
+  }
+  #m-box-demo input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    border: 1px solid #bbb;
+    padding: .6em .8em;
+    width: 230px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 1px 1px 2px #CCC;
+    -webkit-border-radius: 3px;
+     -moz-box-shadow: inset 1px 1px 2px #CCC;
+    -moz-border-radius: 3px;
+     -o-box-shadow: inset 1px 1px 2px #CCC;
+    -o-border-radius: 3px;
+     box-shadow: inset 1px 1px 2px #CCC;
+    border-radius: 3px;
+    }
+
+footer {
+  background: black;
+  color: white;
+  padding: 2em 0;
+  text-align: center;
+  line-height: 1.7em;
+}
+
+pre {
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: .95em;
+  line-height: 1.45em;
+  border: 1px solid #FF5739;
+  margin: 1.85em auto 1em;
+  padding: 1em;
+  background: #FAEFEC;
+  color: #666;
+  white-space: normal;
+  width: 100%;
+}
+  pre .tag {
+    color: #FF9326;
+  }
+  pre .equal_to {
+    color: white
+  }
+  pre .equal_to {
+    color: #F34460;}
+  pre .jquery {
+    color: rgb(209, 94, 94);
+  }
+  pre .jquery-id {
+    color: rgb(213, 39, 39);
+  }
+  pre .comment {
+    font-style: italic;
+    color: #999;
+  }
