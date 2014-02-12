@@ -14,7 +14,7 @@ strong {
     width: 1000px;
     margin: 0 auto;
     position: relative;
-    z-index: 1
+    z-index: 1;
   }
   .m-box-fullscreen article {
     position: absolute;
@@ -66,15 +66,12 @@ h2 + p {
 #m-box-intro {
   background: #D97988;
   color: #F0F0DF;
-  position: relative
+  /*position: relative*/
 }
   #m-box-intro div {
     background: transparent url(../images/bg-1.gif) bottom center no-repeat fixed;
     min-height: 1300px;
     height: 100%
-  }
-  #m-box-intro p {
-
   }
 
 #m-box-instructions {
@@ -197,6 +194,10 @@ footer {
   padding: 2em 0;
   text-align: center;
   line-height: 1.7em;
+}
+
+footer a {
+  color: #D22142
 }
 
 pre {

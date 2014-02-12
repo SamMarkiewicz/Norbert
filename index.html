@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Norbert</title>
+  <title>Norbert - A simple &amp; lightweight jQuery plugin for placeholders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky|Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="stylesheets/reset.css">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <link rel="stylesheet" href="stylesheets/placeholdtip.css">
+  <link rel="stylesheet" href="norbert/norbert.css">
+  <link rel="stylesheet" href="stylesheets/responsive.css">
 </head>
 <body>
-  <a href="https://github.com/you"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 999; display: block" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <a href="https://github.com/SamMarkiewicz/Norbert" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 999; display: block" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   <nav id="m-box--navigation">
     <ul>
       <li><a href="#m-box-intro" title="Next Section">1</a></li>
@@ -62,7 +65,7 @@
             <br/>
             &nbsp;$(<span class="jquery">document</span>).ready(<span class="jquery">function</span>() {
             <br/>
-            &nbsp;&nbsp;$('<span class="jquery-id">#yourForm</span>').placeholdTip({
+            &nbsp;&nbsp;$('<span class="jquery-id">#yourForm</span>').norbert({
             <br/>
             &nbsp;&nbsp;&nbsp;position: 'left' <span class="comment">// Position can be 'top', 'left', 'bottom' or 'right'</span>
             <br/>
@@ -83,7 +86,7 @@
         <p>These two things are what allows Norbert to make his magic :</p>
         <pre>
           <code>
-              <span class="tag">&lt;script</span> type=<span class="equal_to">"text/javascript"</span> src=<span class="equal_to">"placeholdtip.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+              <span class="tag">&lt;script</span> type=<span class="equal_to">"text/javascript"</span> src=<span class="equal_to">"norbert.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
             <br/>
             <span class="tag">&lt;link</span> rel=<span class="equal_to">"stylesheet"</span> href=<span class="equal_to">"norbert.css"</span><span class="tag">&gt;</span>
           </code>
@@ -118,7 +121,7 @@
     <div>
       <article>
         <h2>Let's drive,<br/> Norbert !</h2>
-        <p>And here is what Norbert can do (Type in the fields) :</p>
+        <p>And here is what Norbert can do (type in the fields) :</p>
         <form action="" id="formOne">
           <label for="name">
             <span>Name</span>
@@ -140,40 +143,54 @@
   </section>
   <footer>
     <p>
-      Norbert has been coded with ❦ by <a href="http://sammarkiewi.cz">Sam Markiewicz</a>, with the kind help of <a href="#">KD</a>.
+      Norbert has been coded with ❦ by <a href="http://sammarkiewi.cz">Sam Markiewicz</a>, with the kind help of <a href="https://github.com/kdisneur">KD</a>.
       <br/>
-      If you experience some troubles, please feel free to open an issue on the project's GitHub page.
+      If you experience some troubles, please feel free to open an issue on the <a href="https://github.com/SamMarkiewicz/Norbert">project's GitHub page</a>.
     </p>
   </footer>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-  <script type="text/javascript" src="scripts/norbert.js"></script>
+  <script type="text/javascript" src="norbert/norbert.js"></script>
+  <script type="text/javascript" src="scripts/enquire.js"></script>
   <script type="text/javascript" src="scripts/jquery.parallax-1.1.3.js"></script>
   <script type="text/javascript" src="scripts/jquery.localscroll-1.2.7-min.js"></script>
   <script type="text/javascript" src="scripts/jquery.scrollTo-1.4.2-min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#m-box--navigation').localScroll(10000);
 
-      //.parallax(xPosition, speedFactor, outerHeight) options:
-      //xPosition - Horizontal position of the element
-      //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-      //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-      $('header').parallax("50%", 0.1);
-      $('#m-box-intro').parallax("bottom", 0.1, true);
-      $('#m-box-instructions').parallax("bottom", 0.4, true);
-      $('#m-box-demo').parallax("bottom", 0.1, true);
-
-    })
-  </script>
   <script>
     $(document).ready(function() {
+
+      // Call Norbert
+
       $('#formOne').norbert({
         tipPosition: 'right'
       });
       $('#formTwo').norbert({
         tipPosition: 'left'
       });
+
+      // Call enquire.js for responsive loading
+
+      function loadJS(url)
+      {
+        var body = document.getElementsByTagName('body')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
+
+        // fire the loading
+        body.appendChild(script);
+      }
+
+      enquire.register("screen and (min-width:800px)", { // <-- the bracket was here
+        match : function() {
+          loadJS('scripts/desktop.js')
+        },
+        unmatch : function() {
+          var lastScript = $('body').find('script:last')
+          lastScript.remove();
+        }
+      }); // Note the closing round bracket here
+
     });
   </script>
 </body>
